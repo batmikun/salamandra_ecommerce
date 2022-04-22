@@ -1,0 +1,6 @@
+{
+    "[dockercompose]": {
+        "editor.cursorStyle": "block",
+        "editor.tabSize": 4
+    }
+}
