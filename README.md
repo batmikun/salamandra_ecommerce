@@ -5,15 +5,15 @@
 # Frontend
 
 - Stack :
--   JavaScript
--   React
+  - JavaScript
+  - React
 
 - To run the frontend, cd inside the frontend folder and run "npm run"
 
 # Backend
 
 - Stack :
--   Python
--   Django
+  - Python
+  - Django
 
 - To run the backend, cd inside the backend folder and run "python manage.py runserver"
