@@ -1,6 +1,22 @@
+import { Box, Typography } from "@mui/material";
+
 const AppFooter = () => {
     return ( 
-        <div>Hello</div>
+        <>
+        <Box
+            sx={{
+                height: 64,
+                backgroundColor: 'primary.light',
+                display:'flex',
+                justifyContent:'center',
+                alignItems: 'center',
+            }}
+        >
+            <Typography variant="p">
+                Privacy Policy 
+            </Typography>
+        </Box>
+        </>
      );
 }
  

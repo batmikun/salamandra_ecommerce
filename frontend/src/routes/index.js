@@ -1,5 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
 import AppMenu from "../components/appmenu/app_menu";
+import AppFooter from "../components/appfooter/app_footer";
 
 import AboutUs from "../pages/about_us";
 import ContactUs from '../pages/contact_us';
@@ -17,6 +19,8 @@ const RouterComponent = () => {
                     <Route path="/contact_us" element={<ContactUs />} />
                 </Routes>
             </Router>
+
+            <AppFooter />
         </>    
     );
 }
