@@ -10,6 +10,9 @@ const AppFooter = () => {
                 display:'flex',
                 justifyContent:'center',
                 alignItems: 'center',
+                position: 'absolute',
+                botton: 0,
+                width: '100%'
             }}
         >
             <Typography variant="p">

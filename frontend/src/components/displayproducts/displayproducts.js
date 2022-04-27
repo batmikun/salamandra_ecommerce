@@ -1,9 +1,18 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, FormControl, ImageList, InputLabel, MenuItem, Select, Typography } from "@mui/material";
-import Banner from "../../static/images/banner.webp";
+import { Box, Button, Card, CardActions, CardContent, CardMedia, FormControl, ImageList, InputLabel, MenuItem, Select, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const DisplayProducts = () => {
-    return ( 
-        <Container>
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then(res => res.json())
+            .then(json =>setProducts(json))
+    }, [])
+
+    return (
+        <>
         
             <Box
                 sx={{
@@ -28,25 +37,34 @@ const DisplayProducts = () => {
                     </Select>
                 </FormControl>
             </Box>
-            <ImageList sx={{height: 'inherit'}} cols={4} gap={8}>
-            <Card sx={{ maxWidth: 345 }}>
-                <CardMedia
-                    component="img"
-                    height="250"
-                    image={Banner}
-                    alt="remera"
-                />
-                <CardContent sx = {{backgroundColor: "secondary.light"}}>
-                    <Typography gutterBottom variant="h5" component="div">
-                    Remera OsoBuco
-                    </Typography>
-                </CardContent>
-                <CardActions sx = {{backgroundColor: "secondary.light"}}>
-                    <Button variant="contained" size="small">Agregar al Carrito</Button>
-                </CardActions>
-            </Card>
+            <ImageList sx={{height: 'inherit'}} cols={3} gap={10}>
+                    {products !== [] && products.map((product) => {
+                        return (
+                            <>
+                                <Card sx={{ maxWidth: 345 }} key={product.id} variant="outlined">
+                                    <CardMedia
+                                    component="img"
+                                    height="200"
+                                    image={product.image}
+                                    alt="remera"
+                                    />
+                                    <CardContent>
+                                        <Typography variant="p">
+                                            {product.title}
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions sx = {{ display: "flex", justifyContent: "space-between"}}>
+                                        <Typography  variant="h5">
+                                            {`$ ${product.price}`}
+                                        </Typography>
+                                        <Button variant="contained" size="small">Agregar al Carrito</Button>
+                                    </CardActions>
+                                </Card>
+                            </>
+                        )
+                    })}
             </ImageList>
-        </Container>
+        </>
      );
 }
  

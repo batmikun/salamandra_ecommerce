@@ -9,7 +9,7 @@ import  Logo  from '../../static/images/salamandra_logo.jpg';
 
 const AppMenu = () =>  {
     return (
-        <AppBar position="static" color="default"> 
+        <AppBar position="fixed" color="default"> 
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Avatar 

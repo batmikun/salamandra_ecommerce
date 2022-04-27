@@ -1,6 +1,10 @@
+import { Container } from "@mui/material";
+
 const ContactUs = () => {
   return ( 
-    <div>Contact</div>
+    <Container sx={{ minHeight:'100vh' }}>
+        <div>Contact</div>
+    </Container>
   );
 }
  
